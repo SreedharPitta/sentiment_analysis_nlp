@@ -201,12 +201,12 @@ double solve(int idx) {
 			string latest = prev + " " + word;
 			
 			if(pos_prob[latest] == 0)
-				res1 += pos_prob[word] != 0 ? pos_prob[word] : log10(((double)1/(double)(vocab_size + size_positive)));
+				res1 += pos_prob[word] != 0 ? pos_prob[prev] : log10(((double)1/(double)(vocab_size + size_positive)));
 			else
 				res1 += pos_prob[latest];
 				
 			if(neg_prob[latest] == 0)
-				res2 += neg_prob[word] != 0 ? neg_prob[word] : log10(((double)1/(double)(vocab_size + size_negative)));
+				res2 += neg_prob[word] != 0 ? neg_prob[prev] : log10(((double)1/(double)(vocab_size + size_negative)));
 			else
 				res2 += neg_prob[latest];
 
